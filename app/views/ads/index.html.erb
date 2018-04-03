@@ -1,0 +1,14 @@
+<h1>Ads</h1>
+<table>
+  <% @ads.each do |ad| %>
+    <tr>
+      <td><%= link_to ad.title, ad_path(ad) %></td>
+      <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+      <td><%= link_to 'Delete', ad_path(ad),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New Ad', new_ad_path, {:class => 'button' } %>
